@@ -1,0 +1,303 @@
+<%@page import="ddit.vo.BoardVO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="../css/board.css">
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<!--   <script src="../js/board.js"></script> -->
+<style>
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 550px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	background-color: #f1f1f1;
+	height: 100%;
+}
+
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+	.row.content {
+		height: auto;
+	}
+}
+
+#divsel {
+	background-color: rgb(255 255 255/ 53%);
+	position: relative;
+}
+
+#divsel::before {
+	background-image: url(../images/company.JPG);
+	content: '';
+	opacity: 0.5;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+#containerdiv {
+	
+}
+</style>
+
+</head>
+<%
+HttpSession getsession = request.getSession();
+String mem_id = (String) getsession.getAttribute("id");
+// List<BoardVO> list = (List<BoardVO>)request.getAttribute("boardList");
+// String boardNm = null;
+%>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+				<div id="navbar-brand">
+					<img src="../images/logo.JPG" width="15%" height="5%"><br>
+				</div>
+			</div>
+			<form action="Login.jsp">
+				<div class="collapse navbar-collapse" id="myNavbar">
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</nav>
+
+
+
+	<div id="containerdiv" class="container-fluid">
+		<div class="row content">
+			<div id="divsel">
+				<!-- style="background-color: rgb(255 255 255 / 53%)" -->
+				<div class="col-sm-3 sidenav hidden-xs">
+					<h2>Menu</h2>
+					<ul class="nav nav-pills nav-stacked">
+						<li class="active"><a href="#section1">Main Page</a></li>
+						<li id="company"><a href="#section2">회사정보</a></li>
+						<li><a href="#section3">근태관리</a></li>
+						<li><a href="#section3">채팅</a></li>
+						<li><a href="#section3">Calendar</a></li>
+						<li><a href="#section3">전자결재</a></li>
+						<li id="conference"><a>회의실</a></li>
+						<li id="notieBtn"><a>공지사항</a></li>
+						<li id="freeBtn"><a>자유게시판</a></li>
+						<li><a href="#section3">관리자 페이지</a></li>
+					</ul>
+					<br>
+				</div>
+				<br>
+
+				<article>
+					<div class="col-sm-9">
+						<div class="well">
+							<h4>Na's Company</h4>
+							<p>Company Introduction</p>
+						</div>
+					</div>
+				</article>
+				<div class="col-lg-12"></div>
+				
+
+				<div class="row bg">
+
+					<div class="col-sm-4">
+						<div class="well">
+							<p>공지사항</p>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="well">
+							<p>Calendar</p>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="well">
+							<p>To Do List</p>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<footer class="container-fluid text-center">
+		<p>회사: 대전광역시 중구 대흥동 / 대표 : 이나영</p>
+		<p>고객센터 : 1588-1159 / mail : abcd@naver.com</p>
+		<p>사업자번호 : 314-86-24510</p>
+	</footer>
+
+	<script type="text/javascript">
+	function book(){
+		$('#resBtn').on('click',function(){
+			let bookcode = "";
+			bookcode +="	<input type='datetime-local' id='startTime' name='startTime'><br>";
+			bookcode +="	<input type='datetime-local' id='endTime' name='endTime'><br>";
+			bookcode +="	<select name='conferenceRoom' id='conferenceRoom'>";
+			bookcode +="		<option value='1'>회의실1</option>";
+			bookcode +="		<option value='2'>회의실2</option>";
+			bookcode +="		<option value='3'>회의실3</option>";
+			bookcode +="		<option value='4'>회의실4</option>";
+			bookcode +="		<option value='5'>회의실5</option>";
+			bookcode +="		<option value='6'>회의실6</option>";
+			bookcode +="		<option value='7'>회의실7</option>";
+			bookcode +="	</select>";
+			bookcode +="	<hr>";
+			bookcode +="	<input type='button' id='btn' value='예약' >";
+			$('.col-lg-12').html(bookcode);	
+
+			$('#btn').on('click', function(){
+				
+				$.ajax({
+					url : '<%=request.getContextPath() %>/conference/conferenceList.do';
+					type : 'post',
+					data : {
+						"choice" = "reserve",
+						"startTime" = startTime,
+						"endTime" = endTime,
+						"conferenceRoom" = conferenceRoom
+					},
+					success : function(res){
+						console.log(res);
+					},
+					dataType : "json",
+					
+					error : function(xhr){
+						console.log(xhr);
+					}
+					
+				});
+			});
+			
+			
+		});
+	};
+ let re_value = null;
+			 $('#freeBtn').on('click', function(){
+  	 		
+<%--   	 		<% --%>
+//   	  		 boardNm = (String)request.getAttribute("boardNm");
+<%--   			%> --%>
+  			
+				    $.ajax({
+				      url : '<%=request.getContextPath()%>/board/board.do',
+				      type : 'post', 
+				      data : {
+				    	  "choice" : "자유"
+				    	  },
+				      success : function(res){
+  						console.log(res);
+				        },
+				        dataType : "json",
+				        
+				        error :function(xhr){
+							console.log(xhr);
+				        }
+				    });
+				  }); 
+
+
+			$('#notieBtn').on('click', function(){
+				
+<%--   			<% --%>
+//   	   		boardNm = (String)request.getAttribute("공지");
+<%--   			%> --%>
+				    $.ajax({
+				      url : '<%=request.getContextPath()%>/board/board.do',
+				      type : 'post',        
+				      data : {
+				    	 "choice" : "공지"
+				      },
+				      success : function(res){
+				    	  console.log(res);
+				        },
+				        error :function(xhr){
+							console.log(xhr);
+				        },
+				     dataType:'json'
+				    });
+				  }); 
+  			
+	$('#conference').on('click',function(){
+				
+				$.ajax({
+					url : '<%=request.getContextPath() %>/conference/conferenceList.do',
+					type : 'post',
+					data : {
+						"choice" : "list"
+					},
+					success : function(res){
+						let code  = "<table border='1'>";
+						 code += "<thead>";
+						 code += "<tr>";
+						 code += "	<th>예약번호</th><th>직원번호</th><th>이 름</th><th>회의실번호</th><th>시작시간</th><th>종료시간</th>";
+						 code += "</tr>";
+						 code += "</thead>";
+						 code += "<tbody>";
+						
+						$.each(res, function(i,v){
+							code +="<tr><td>" + v.res_no +"</td>";
+							code +="<td>" + v.mem_no +"</td>";
+							code +="<td>" + v.mem_nm +"</td>";
+							code +="<td>" + v.con_no +"</td>";
+							code +="<td>" + v.res_start.toString().split(":")[0]+":"+ v.res_start.toString().split(":")[1] +"</td>";
+							code +="<td>" + v.res_end.toString().split(":")[0]+":"+ v.res_end.toString().split(":")[1]  +"</td></tr>";
+						});
+						code += "</tbody></table><input type='button' id='resBtn' value='예약하기'>";
+
+						$('.col-lg-12').html(code);	
+						console.log(res);
+						
+						book();
+						
+						
+					},
+					error : function(xhr){
+						console.log(xhr);
+					},
+					dataType:'json'
+				});
+				
+			});
+	
+	
+	
+	
+	
+	
+  </script>
+
+</body>
+</html>

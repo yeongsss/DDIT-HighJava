@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+ 	PUBLIC "-//ibatis.apache.org//DTD Sql Map 2.0//EN" 
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="lprod2">
+	
+	<!-- lprod_id 중 제일 큰값에 1 더한 값 가져오기 -->
+	<select id="getLprodId" resultClass="lprodVO">
+		select nvl(max(lprod_id),0) + 1 maxnum from lprod
+	</select>
+	
+	<!-- Lprod_gu 중복확인 -->
+	<select id="getMaxId" resultClass="lprodVO"  parameterClass="string">
+		select count(*) from lprod 
+		where lprod_gu = #lprod_gu#
+	</select>
+
+
+</sqlMap>

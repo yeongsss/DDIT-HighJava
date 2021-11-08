@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;project/src/project01/untitled.exerd&apos; to &apos;GMP.exerd&apos;" description="Rename resource &apos;untitled.exerd&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/project01/untitled.exerd" name="GMP.exerd" stamp="1631453319450" updateReferences="true"/>
+</session>

@@ -1,0 +1,35 @@
+package src.main.java.ddit.service;
+
+import src.main.java.ddit.dao.SalaryDAOImpl;
+import src.main.java.ddit.vo.SalaryVO;
+
+public class SalaryServiceImpl implements ISalaryService{
+
+	private static SalaryServiceImpl instance = null;
+	private SalaryDAOImpl dao = null;
+	
+	private SalaryServiceImpl() {
+		if(dao==null) dao = SalaryDAOImpl.getInstance();
+	}
+	
+	public static SalaryServiceImpl getInstance() {
+		if(instance==null) instance = new SalaryServiceImpl();
+		return instance;
+	}
+
+	@Override
+	public int insertSal(SalaryVO salVo) {
+		return dao.insertSal(salVo);
+	}
+
+	@Override
+	public List<SalaryVO> getSalaryList() {
+		return dao.getSalaryList();
+	}
+
+	@Override
+	public SalaryVO getSalary(int memNo) {
+		return dao.getSalary(memNo);
+	}
+
+}

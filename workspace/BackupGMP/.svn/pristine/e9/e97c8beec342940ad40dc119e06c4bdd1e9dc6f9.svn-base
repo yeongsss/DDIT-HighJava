@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+	
+	<sqlMapConfig>
+	
+		<properties resource="res/ddit/config/SqlMapConfig.properties" />
+		
+		<settings useStatementNamespaces="true"/>
+		
+		<typeAlias alias="board_commentVO"			type="kr.or.ddit.vo.BoardCommentVO"/>
+		<typeAlias alias="board_fileVO"				type="kr.or.ddit.vo.BoardFileVO"/>
+		<typeAlias alias="boardVO" 					type="kr.or.ddit.vo.BoardVO"/>
+		<typeAlias alias="chatVO" 					type="kr.or.ddit.vo.ChatVO"/>
+		<typeAlias alias="conferenceVO"				type="kr.or.ddit.vo.ConferenceVO"/>
+		<typeAlias alias="confirmerVO"				type="kr.or.ddit.vo.ConfirmerVO"/>
+		<typeAlias alias="departmentVO"				type="kr.or.ddit.vo.DepartmentVO"/>
+		<typeAlias alias="entrance_sectionVO"		type="kr.or.ddit.vo.EntranceSectionVO"/>
+		<typeAlias alias="entranceVO"				type="kr.or.ddit.vo.EntranceVO"/>
+		<typeAlias alias="member_infoVO"			type="kr.or.ddit.vo.MemberInfoVO"/>
+		<typeAlias alias="memberVO"					type="kr.or.ddit.vo.MemberVO"/>
+		<typeAlias alias="messageVO"				type="kr.or.ddit.vo.MessageVO"/>
+		<typeAlias alias="positionVO"				type="kr.or.ddit.vo.PositionVO"/>
+		<typeAlias alias="salaryVO"					type="kr.or.ddit.vo.SalaryVO"/>
+		<typeAlias alias="sanction_documentVO"		type="kr.or.ddit.vo.SanctionDocumentVO"/>
+		<typeAlias alias="sanction_fileVO"			type="kr.or.ddit.vo.SanctionFileVO"/>
+		<typeAlias alias="schedule_sectionVO"		type="kr.or.ddit.vo.ScheduleSectionVO"/>
+		<typeAlias alias="scheduleVO"				type="kr.or.ddit.vo.ScheduleVO"/>
+		<typeAlias alias="work_managementVO"		type="kr.or.ddit.vo.WorkManagementVO"/>
+
+
+		
+		<transactionManager type="JDBC">
+			<dataSource type="SIMPLE">
+				<property name="JDBC.Driver" value="${driver}"/>
+				<property name="JDBC.ConnectionURL" value="${url}"/>
+				<property name="JDBC.Username" value="${user}"/>
+				<property name="JDBC.Password" value="${pass}"/>
+			</dataSource>
+		</transactionManager> 
+		
+		
+		
+		<sqlMap resource="res/ddit/mapping/board_comment.xml"/>
+		<sqlMap resource="res/ddit/mapping/board_file.xml"/>
+		<sqlMap resource="res/ddit/mapping/board.xml"/>
+		<sqlMap resource="res/ddit/mapping/chat.xml"/>
+		<sqlMap resource="res/ddit/mapping/conference.xml"/>
+		<sqlMap resource="res/ddit/mapping/confirmer.xml"/>
+		<sqlMap resource="res/ddit/mapping/department.xml"/>
+		<sqlMap resource="res/ddit/mapping/entrance_section.xml"/>
+		<sqlMap resource="res/ddit/mapping/entrance.xml"/>
+		<sqlMap resource="res/ddit/mapping/member_info.xml"/>
+		<sqlMap resource="res/ddit/mapping/member.xml"/>
+		<sqlMap resource="res/ddit/mapping/message.xml"/>
+		<sqlMap resource="res/ddit/mapping/position.xml"/>
+		<sqlMap resource="res/ddit/mapping/salary.xml"/>
+		<sqlMap resource="res/ddit/mapping/sanction_document.xml"/>
+		<sqlMap resource="res/ddit/mapping/sanction_file.xml"/>
+		<sqlMap resource="res/ddit/mapping/schedule_section.xml"/>
+		<sqlMap resource="res/ddit/mapping/schedule.xml"/>
+		<sqlMap resource="res/ddit/mapping/work_management.xml"/>
+		
+			
+	</sqlMapConfig>

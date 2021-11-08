@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.tomato.exerd.core.wizard.NewEXerdWizard">
+	</section>
+	<section name="com.tomato.exerd.handler.DiagramSelectDialog">
+		<item key="DIALOG_WIDTH" value="400"/>
+		<item key="DIALOG_HEIGHT" value="300"/>
+		<item key="DIALOG_X_ORIGIN" value="768"/>
+		<item key="DIALOG_Y_ORIGIN" value="348"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="solution">
+	</section>
+	<section name="com.tomato.exerd.export.ExportModelWizard">
+		<list key="templateNames">
+		</list>
+		<list key="templateContents">
+		</list>
+	</section>
+	<section name="com.tomato.exerd.export.ModelExportWizardDialog">
+		<item key="lastUsedTemplateName" value="스타일 적용된 HTML(기본)"/>
+		<item key="sendType" value="file"/>
+		<item key="destinationPath" value="/project/src/t.html"/>
+		<item key="DIALOG_X_ORIGIN" value="618"/>
+		<item key="DIALOG_Y_ORIGIN" value="132"/>
+		<item key="DIALOG_WIDTH" value="701"/>
+		<item key="DIALOG_HEIGHT" value="624"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="solutionSelectionDialog">
+		<item key="applyScope" value="1"/>
+	</section>
+</section>

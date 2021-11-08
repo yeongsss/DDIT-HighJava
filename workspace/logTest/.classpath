@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="lib" path="D:/DDIT/3.HighJava/Jar/ibatis-2.3.4.7.26.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/3.HighJava/Jar/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/3.HighJava/Jar/ojdbc8-21.1.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/curvesapi-1.06.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/poi-excelant-5.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/poi-ooxml-5.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/poi-ooxml-full-5.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/poi-ooxml-lite-5.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/poi-scratchpad-5.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/xmlbeans-4.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/새 폴더/commons-compress-1.20.jar"/>
+	<classpathentry kind="lib" path="D:/DDIT/Util/새 폴더/poi-5.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
